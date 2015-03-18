@@ -1,0 +1,165 @@
+<html>
+    <head>
+        <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="images/favicons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="images/favicons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="images/favicons/favicon-16x16.png" sizes="16x16">
+        <title>Freeshot | A beautiful Dribbble Client for iOS by Luke Vella</title>
+        <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
+        <script type="text/javascript" src="js/waypoints.min.js"></script>
+        <script type="text/javascript">
+            window.onload = function(){
+                var element = document.getElementsByClassName('scroll-down-hint')[0];
+                var waypoint = new Waypoint({
+                    element : element,
+                    offset: '50%',
+                    handler : function(direction){
+                        if (direction == 'down'){
+                            element.className += ' hide';
+                        } else {
+                            element.className = 'scroll-down-hint'
+                        }
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <section class="hero">
+            <div class="overlay">
+                <div class="splash">
+                    <div class="icon">
+                        <img src="images/icon.png" alt="Freeshot Icon" width="128" />
+                    </div>
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Freeshot Logo" width="250" />
+                    </div>
+                    <h1>Inspiration on the go</h1>
+                    <h2>A beautiful Dribbble client for iOS</h2>
+                    <div class="appstore-link">
+                        <a href=""><img src="images/appstore.png" alt="Download on the App Store" width="162" /></a>
+                    </div>
+                    <div class="scroll-down-hint"></div>
+                </div>
+            </div>
+        </section>
+        <section class="section features">
+            <div class="section-title">
+                Features
+            </div>
+            <h1>The Best Way to Experience Dribbble on iOS</h1>
+            <h2>Freeshot offers a fast and smooth user experience that lets you browse and interact with some of the work of the best designers on the web.</h2>
+            <div class="mocks">
+                <img src="images/mocks.png" alt="Freeshot iPhone Mockups" width="920"/>
+            </div>
+        </section>
+        <section class="section testimonials">
+            <div class="section-title">
+                Testimonials
+            </div>
+            <h1>People Love Using Freeshot</h1>
+            <h2>You don&#39;t have to take my word for it. Freeshot is used by thousands of Dribbble users. Check out what they have to say!</h2>
+            <ul class="testimonials-list">
+                <li class="testimonial">
+                    <div class="wrapper">
+                        <div class="avatar">
+                            <img src="images/testimonials/aub.png" width="32" />
+                        </div>
+                        <div class="content-wrapper">
+                            <div class="name">
+                                Aubrey Johnson <a href="http://twitter.com/aub">@aub</a>
+                            </div>
+                            <div class="content">
+                                The best <a href="http://twitter.com/dribbble">@dribbble</a> client I&#39;ve found...
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="testimonial">
+                    <div class="wrapper">
+                        <div class="avatar">
+                            <img src="images/testimonials/bdc.png" width="32" />
+                        </div>
+                        <div class="content-wrapper">
+                            <div class="name">
+                                Benjamin De Cock <a href="http://twitter.com/bdc">@bdc</a>
+                            </div>
+                            <div class="content">
+                                Freeshot is by far the best Dribbble client for iPhone!
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="testimonial">
+                    <div class="wrapper">
+                        <div class="avatar">
+                            <img src="images/testimonials/cbillins.png" width="32" />
+                        </div>
+                        <div class="content-wrapper">
+                            <div class="name">
+                                Christian Billings <a href="http://twitter.com/cbillins">@cbillins</a>
+                            </div>
+                            <div class="content">
+                                Freeshot is the best Dribbble client I have seen...</a>.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="testimonial">
+                    <div class="wrapper">
+                        <div class="avatar">
+                            <img src="images/testimonials/oliverwhitehall.png" width="32" />
+                        </div>
+                        <div class="content-wrapper">
+                            <div class="name">
+                                Oliver Whitehall <a href="http://twitter.com/oliverwhitehall">@oliverwhitehall</a>
+                            </div>
+                            <div class="content">
+                                Freeshot by <a href="http://twitter.com/imlukevella">@imlukevella</a> is a great Dribbble client.
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="testimonial">
+                    <div class="wrapper">
+                        <div class="avatar">
+                            <img src="images/testimonials/aorcsik.png" width="32" />
+                        </div>
+                        <div class="content-wrapper">
+                            <div class="name">
+                                Tony (Antal Orcsik)  <a href="http://twitter.com/aorcsik">@aorcsik</a>
+                            </div>
+                            <div class="content">
+                                A really nice free <a href="http://twitter.com/dribbble">@dribbble</a> client for iOS
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="testimonial">
+                    <div class="wrapper">
+                        <div class="avatar">
+                            <img src="images/testimonials/tolehico.png" width="32" />
+                        </div>
+                        <div class="content-wrapper">
+                            <div class="name">
+                                Toshi Kamei <a href="http://twitter.com/tolehico">@tolehico</a>
+                            </div>
+                            <div class="content">
+                                ...beautiful <a href="http://twitter.com/dribbble">@dribbble</a> client for iOS...
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </body>
+</html>
