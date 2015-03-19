@@ -67,7 +67,7 @@ a {
   color: #049FE2;
   text-decoration: none; }
   a:hover {
-    text-decoration: underline; }
+    color: #E84D75; }
 
 @-webkit-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
