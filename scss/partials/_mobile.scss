@@ -1,0 +1,113 @@
+$mobile: new-breakpoint(max-width 720px 8);
+
+
+@include media($mobile) {
+    body {
+        font-size:em(14);
+    }
+    // HERO
+
+    .hero {
+        height:auto;
+        min-height:0;
+        .overlay {
+            position:static;
+            padding:40px 40px;
+            display:block;
+            height:auto;
+        }
+        .splash {
+            display:block;
+        }
+        .icon img {
+            width:80px;
+        }
+        .logo img {
+            width:150px;
+        }
+        .scroll-down-hint {
+            display:none;
+        }
+        h1 {
+            font-size:em(36);
+        }
+        h2 {
+            font-size:em(18);
+        }
+    }
+
+    // section
+
+    .section {
+        padding: em(20) em(20) em(40) em(40);
+        h1 {
+            font-size: em(24);
+        }
+        h2 {
+            font-size: em(18);
+        }
+    }
+
+    // features
+
+    .features {
+        margin-bottom: em(20);
+        .mocks {
+            margin-top:em(60);
+        }
+    }
+
+    // testimonials
+
+    .testimonials-list {
+        margin-top:em(40);
+        .testimonial {
+            margin:15px;
+            text-align:center;
+            .wrapper {
+                display:block;
+            }
+            .avatar, .content-wrapper {
+                display:block;
+                width:100%;
+            }
+        }
+    }
+
+
+    // share
+    .share-buttons {
+        margin-top:em(40);
+        .button {
+            border-radius: 5px;
+            line-height:50px;
+            padding:0;
+            width:100%;
+            max-width:240px;
+            margin:10px !important;
+            &::after {
+                display:none;
+            }
+        }
+    }
+
+    // download
+
+    .download {
+        .ad {
+            display:block;
+            margin:20px 0 20px 0;
+            font-size:em(24);
+        }
+    }
+
+    // footer
+
+    .footer {
+        text-align:center;
+        .badges {
+            margin-top:10px;
+            text-align:center;
+        }
+    }
+}
