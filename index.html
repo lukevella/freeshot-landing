@@ -16,21 +16,29 @@
         <title>Freeshot | A beautiful Dribbble Client for iOS by Luke Vella</title>
         <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
         <script type="text/javascript" src="js/waypoints.min.js"></script>
+        <script type="text/javascript" src="js/zepto.min.js"></script>
         <script type="text/javascript">
-            window.onload = function(){
-                var element = document.getElementsByClassName('scroll-down-hint')[0];
+            $(document).ready(function(){
+                var element = $('.scroll-down-hint').get(0);
                 var waypoint = new Waypoint({
                     element : element,
                     offset: '50%',
-                    handler : function(direction){
+                    handler : function(direction, el){
                         if (direction == 'down'){
-                            element.className += ' hide';
+                            $(element).addClass('hide');
                         } else {
-                            element.className = 'scroll-down-hint'
+                            $(element).removeClass('hide');
                         }
                     }
-                })
-            }
+                });
+                $(".share-buttons .button").click(function(e){
+                    var bodyWidth = $("body").width();
+                    var popUpWidth = 550;
+                    var left = (bodyWidth / 2) - (550 / 2);
+                    window.open(this.href, "Share", "fullscreen=no, left="+left+", top=100, width=550, height=400");
+                    return false;
+                });
+            });
         </script>
     </head>
     <body>
@@ -45,9 +53,7 @@
                     </div>
                     <h1>Inspiration on the go</h1>
                     <h2>A beautiful Dribbble client for iOS</h2>
-                    <div class="appstore-link">
-                        <a href=""><img src="images/appstore.png" alt="Download on the App Store" width="162" /></a>
-                    </div>
+                        <a class="appstore-button" href="https://itunes.apple.com/us/app/freeshot-dribbble-client/id713708907"><img src="images/appstore.png" alt="Download on the App Store" width="162" /></a>
                     <div class="scroll-down-hint"></div>
                 </div>
             </div>
@@ -66,7 +72,7 @@
             <div class="section-title">
                 Testimonials
             </div>
-            <h1>People Love Using Freeshot</h1>
+            <h1>Designers Love Using Freeshot</h1>
             <h2>You don&#39;t have to take my word for it. Freeshot is used by thousands of Dribbble users. Check out what they have to say!</h2>
             <ul class="testimonials-list">
                 <li class="testimonial">
@@ -161,5 +167,64 @@
                 </li>
             </ul>
         </section>
+        <section class="section features">
+            <div class="section-title">
+                Share
+            </div>
+            <h1>Spread the Word</h1>
+            <h2>I don&#39;t advertise, so word of mouth is the only way people can find the app. If you know someone who might enjoy using Freeshot, let them know!</h2>
+            <div class="share-buttons">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://freeshotapp.com" class="button first facebook"><img class="icon" src="images/sharefacebook.png" /><span>Share on Facebook</span></a>
+                <a href="https://twitter.com/home?status=Check%20out%20%40freeshotapp.%20A%20beautiful,%20free%20%40dribbble%20client%20by%20%40imlukevella%20for%20iOS.%20http://freeshotapp.com" class="button last twitter"><img class="icon" src="images/sharetwitter.png" /><span>Share on Twitter</span></a>
+            </div>
+        </section>
+        <div class="seperator">
+            <section class="section download">
+                <span class="ad">Get your inspiration on the go.</span>
+                <a class="appstore-button" href="https://itunes.apple.com/us/app/freeshot-dribbble-client/id713708907"><img src="images/appstore.png" alt="Download on the App Store" width="162" /></a>
+            </section>
+        </div>
+        <section class="section about">
+            <div class="section-title">
+                About
+            </div>
+            <h1>Who Made This?</h1>
+
+            <a href="http://lukevella.com"><img class="picture" src="images/myface.png" width="100" alt="Luke Vella" /></a>
+            <h3>Freeshot was created by <a href="http://lukevella.com">Luke Vella</a></h3>
+            <p>
+                If you have any feedback or would like to find out what else I&#39;m working on, you should follow me on <a href="http://twitter.com/imlukevella">Twitter</a>, <a href="http://dribbble.com/lukevella">Dribbble</a> or <a href="http://github.com/lukevella">Github</a>.
+            </p>
+        </section>
+        <footer class="footer">
+            <div id="fb-root"></div>
+            <a href="https://twitter.com/freeshotapp" class="twitter-follow-button" data-show-count="false">Follow @freeshotapp</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+            <iframe src="https://ghbtns.com/github-btn.html?user=lukevella&repo=freeshot-landing&type=star" frameborder="0" scrolling="0" width="50px" height="20px"></iframe>
+
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=808131669281245&version=v2.0";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <div class="fb-like" data-href="https://www.facebook.com/pages/Freeshot/1583740441881784" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
+
+            <div style="text-align:right; margin-top:-30px">
+                <a href="https://mixpanel.com/f/partner"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_light.png" alt="Mobile Analytics" /></a>
+            </div>
+
+        </footer>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-59795507-3', 'auto');
+            ga('send', 'pageview');
+        </script>
     </body>
 </html>

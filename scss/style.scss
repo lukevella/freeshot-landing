@@ -3,15 +3,23 @@
 @import "neat/neat";
 @import "partials/reset";
 
+$blue-clr:#049FE2;
+$pink-clr:#E84D75;
+$light-clr:#9FA4AE;
+$border-clr: #EAEDF1;
+
 body {
     font-family:'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    height:100% !important;
 }
 
+button:focus, a:focus, input:focus {outline:0;}
+
 a {
-    color: #049FE2;
+    color: $blue-clr;
     text-decoration:none;
     &:hover {
-        color:#E84D75;
+        color:$pink-clr;
     }
 }
 
@@ -34,6 +42,7 @@ a {
     background-size:cover;
     position:relative;
     min-height: 700px;
+    margin-bottom:em(80);
     .overlay {
         background: rgba(white,0.95);
         position:absolute;
@@ -82,7 +91,8 @@ a {
 }
 
 .section {
-    padding: em(100) em(40);
+    padding: em(40) em(40) em(80) em(40);
+    @include outer-container;
     text-align:center;
     .section-title {
         font-size: em(18);
@@ -98,15 +108,17 @@ a {
     }
     h2 {
         font-size: em(21);
-        color: #9FA4AE;
-        line-height: 1.2em;
-        max-width: 700px;
+        color: $light-clr;
+        line-height: 1.4em;
+        max-width: 720px;
         margin:0 auto em(20) auto;
     }
 }
 
 .features {
+    margin-bottom:em(40);
     .mocks {
+        position:relative;
         margin-top:em(120);
         img {
             max-width:100%;
@@ -115,19 +127,18 @@ a {
 }
 
 .testimonials-list {
-    max-width:1000px;
-    margin:80px auto;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flext-start;
-    align-content: flex-start;
-    align-items: flex-start;
+    margin:80px auto 0 auto;
+    @include display(flex);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(flext-start);
+    @include align-content(flex-start);
+    @include align-items(flex-start);
     .testimonial {
         text-align:left;
         margin:30px 15px;
-        flex-grow:1;
-        flex-basis: 250px;
+        @include flex-grow(1);
+        @include flex-basis(250px);
         .wrapper {
             display:table;
             .avatar, .content-wrapper {
@@ -141,7 +152,6 @@ a {
                 }
             }
             .name {
-                font-size: em(14);
                 font-weight: bold;
                 line-height: 32px;
                 a {
@@ -152,9 +162,115 @@ a {
             .content {
                 font-size: em(20);
                 font-weight: 300;
-                line-height:1.2em;
+                line-height:1.3em;
 
             }
         }
     }
+}
+
+.about {
+    .picture {
+        margin:em(40) 0;
+    }
+    h3 {
+        font-size: em(21);
+        margin-bottom:em(10);
+    }
+    p {
+        color: $light-clr;
+        max-width: 512px;
+        margin:0 auto em(40) auto;
+        line-height:1.5em;
+    }
+}
+
+.seperator {
+    border-top:1px solid $border-clr;
+    border-bottom:1px solid $border-clr;
+    margin-bottom:40px;
+}
+
+.download.section {
+    padding:40px;
+    .ad {
+        font-size: 24px;
+        margin-right: 40px;
+    }
+    .ad, .appstore-button {
+        vertical-align:middle;
+        display:inline-block;
+    }
+}
+
+.share-buttons {
+    margin-top: em(80);
+    $border-radius:5px;
+    .button {
+        color:white;
+        display:inline-block;
+        line-height:60px;
+        width:240px;
+        font-size:em(16);
+        text-align:center;
+        &:hover {
+            opacity: 0.8;
+        }
+        &.last, &.first {
+            position:relative;
+            &::after {
+                content:'';
+                display:block;
+                width:0;
+                height:0;
+                position:absolute;
+                top:0;
+                width: 0;
+            	height: 0;
+            }
+        }
+        &.first {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+            margin-right:15px;
+            &::after {
+                right:-30px;
+                border-top: 60px solid;
+                border-right: 30px solid transparent;
+            }
+        }
+        &.last {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+            margin-left:15px;
+            &::after {
+                left: -30px;
+                border-bottom: 60px solid;
+                border-left: 30px solid transparent;
+            }
+        }
+
+    }
+    .icon {
+        width: 20px;
+        vertical-align:sub;
+        margin-right:em(15);
+    }
+    .twitter {
+        background: #00ACED;
+        &.last::after {
+            border-bottom-color: #00ACED;
+        }
+    }
+    .facebook {
+        background:#3B5998;
+        &.first::after {
+            border-top-color: #3B5998;
+        }
+    }
+}
+
+.footer {
+    text-align:left;
+    padding:0 40px 40px 40px;
 }

@@ -61,7 +61,11 @@ table {
   border-spacing: 0; }
 
 body {
-  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; }
+  font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  height: 100% !important; }
+
+button:focus, a:focus, input:focus {
+  outline: 0; }
 
 a {
   color: #049FE2;
@@ -108,7 +112,8 @@ a {
   background: url("../images/background.png") no-repeat;
   background-size: cover;
   position: relative;
-  min-height: 700px; }
+  min-height: 700px;
+  margin-bottom: 5em; }
   .hero .overlay {
     background: rgba(255, 255, 255, 0.95);
     position: absolute;
@@ -152,8 +157,15 @@ a {
       opacity: 0; }
 
 .section {
-  padding: 6.25em 2.5em;
+  padding: 2.5em 2.5em 5em 2.5em;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center; }
+  .section:after {
+    content: "";
+    display: table;
+    clear: both; }
   .section .section-title {
     font-size: 1.125em;
     margin-bottom: 0.625em;
@@ -167,29 +179,74 @@ a {
   .section h2 {
     font-size: 1.3125em;
     color: #9FA4AE;
-    line-height: 1.2em;
-    max-width: 700px;
+    line-height: 1.4em;
+    max-width: 720px;
     margin: 0 auto 1.25em auto; }
 
-.features .mocks {
-  margin-top: 7.5em; }
-  .features .mocks img {
-    max-width: 100%; }
+.features {
+  margin-bottom: 2.5em; }
+  .features .mocks {
+    position: relative;
+    margin-top: 7.5em; }
+    .features .mocks img {
+      max-width: 100%; }
 
 .testimonials-list {
-  max-width: 1000px;
-  margin: 80px auto;
+  margin: 80px auto 0 auto;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
   flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: flext-start;
+  -moz-box-pack: flext-start;
+  box-pack: flext-start;
+  -webkit-justify-content: flext-start;
+  -moz-justify-content: flext-start;
+  -ms-justify-content: flext-start;
+  -o-justify-content: flext-start;
   justify-content: flext-start;
+  -ms-flex-pack: flext-start;
+  -webkit-align-content: flex-start;
+  -moz-align-content: flex-start;
   align-content: flex-start;
-  align-items: flex-start; }
+  -ms-flex-line-pack: start;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  box-align: start;
+  -webkit-align-items: flex-start;
+  -moz-align-items: flex-start;
+  -ms-align-items: flex-start;
+  -o-align-items: flex-start;
+  align-items: flex-start;
+  -ms-flex-align: start; }
   .testimonials-list .testimonial {
     text-align: left;
     margin: 30px 15px;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
     flex-grow: 1;
-    flex-basis: 250px; }
+    -ms-flex-positive: 1;
+    -webkit-flex-basis: 250px;
+    -moz-flex-basis: 250px;
+    flex-basis: 250px;
+    -ms-flex-preferred-size: 250px; }
     .testimonials-list .testimonial .wrapper {
       display: table; }
       .testimonials-list .testimonial .wrapper .avatar, .testimonials-list .testimonial .wrapper .content-wrapper {
@@ -200,7 +257,6 @@ a {
         .testimonials-list .testimonial .wrapper .avatar img {
           border-radius: 100%; }
       .testimonials-list .testimonial .wrapper .name {
-        font-size: 0.875em;
         font-weight: bold;
         line-height: 32px; }
         .testimonials-list .testimonial .wrapper .name a {
@@ -209,6 +265,86 @@ a {
       .testimonials-list .testimonial .wrapper .content {
         font-size: 1.25em;
         font-weight: 300;
-        line-height: 1.2em; }
+        line-height: 1.3em; }
+
+.about .picture {
+  margin: 2.5em 0; }
+.about h3 {
+  font-size: 1.3125em;
+  margin-bottom: 0.625em; }
+.about p {
+  color: #9FA4AE;
+  max-width: 512px;
+  margin: 0 auto 2.5em auto;
+  line-height: 1.5em; }
+
+.seperator {
+  border-top: 1px solid #EAEDF1;
+  border-bottom: 1px solid #EAEDF1;
+  margin-bottom: 40px; }
+
+.download.section {
+  padding: 40px; }
+  .download.section .ad {
+    font-size: 24px;
+    margin-right: 40px; }
+  .download.section .ad, .download.section .appstore-button {
+    vertical-align: middle;
+    display: inline-block; }
+
+.share-buttons {
+  margin-top: 5em; }
+  .share-buttons .button {
+    color: white;
+    display: inline-block;
+    line-height: 60px;
+    width: 240px;
+    font-size: 1em;
+    text-align: center; }
+    .share-buttons .button:hover {
+      opacity: 0.8; }
+    .share-buttons .button.last, .share-buttons .button.first {
+      position: relative; }
+      .share-buttons .button.last::after, .share-buttons .button.first::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        width: 0;
+        height: 0; }
+    .share-buttons .button.first {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      margin-right: 15px; }
+      .share-buttons .button.first::after {
+        right: -30px;
+        border-top: 60px solid;
+        border-right: 30px solid transparent; }
+    .share-buttons .button.last {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      margin-left: 15px; }
+      .share-buttons .button.last::after {
+        left: -30px;
+        border-bottom: 60px solid;
+        border-left: 30px solid transparent; }
+  .share-buttons .icon {
+    width: 20px;
+    vertical-align: sub;
+    margin-right: 0.9375em; }
+  .share-buttons .twitter {
+    background: #00ACED; }
+    .share-buttons .twitter.last::after {
+      border-bottom-color: #00ACED; }
+  .share-buttons .facebook {
+    background: #3B5998; }
+    .share-buttons .facebook.first::after {
+      border-top-color: #3B5998; }
+
+.footer {
+  text-align: left;
+  padding: 0 40px 40px 40px; }
 
 /*# sourceMappingURL=style.css.map */
