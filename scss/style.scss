@@ -2,6 +2,7 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "partials/reset";
+@import "partials/preloader";
 
 $blue-clr:#049FE2;
 $pink-clr:#E84D75;
@@ -11,6 +12,10 @@ $border-clr: #EAEDF1;
 body {
     font-family:'Roboto', 'Helvetica Neue', Arial, sans-serif;
     height:100% !important;
+    position:relative;
+    &.loading {
+        overflow:hidden;
+    }
 }
 
 button:focus, a:focus, input:focus {outline:0;}
@@ -273,7 +278,8 @@ a {
 
 .footer {
     text-align:left;
-    padding:0 40px 40px 40px;
+    border-top: 1px solid $border-clr;
+    padding:25px 40px 20px 40px;
     .badges {
         text-align:right;
         margin-top:-30px;

@@ -14,11 +14,32 @@
         <link rel="icon" type="image/png" href="images/favicons/android-chrome-192x192.png" sizes="192x192">
         <link rel="icon" type="image/png" href="images/favicons/favicon-96x96.png" sizes="96x96">
         <link rel="icon" type="image/png" href="images/favicons/favicon-16x16.png" sizes="16x16">
+        <meta property="og:title" content="Freeshot Dribbble Client">
+        <meta property="og:description" content="A Beautiful Dribbble Client for iOS">
+        <meta property="og:image" content="images/ogimage.png">
+
         <title>Freeshot | A beautiful Dribbble Client for iOS by Luke Vella</title>
         <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
         <script type="text/javascript" src="js/waypoints.min.js"></script>
         <script type="text/javascript" src="js/zepto.min.js"></script>
+        <script type="text/javascript" src="js/pxloader-images.min.js"></script>
         <script type="text/javascript">
+            var loader = new PxLoader();
+            loader.addImage('images/mocks.png');
+            loader.addImage('images/background.png');
+
+            loader.addCompletionListener(function() {
+                setTimeout(function(){
+                    $(".preloader").addClass("fadeOut");
+                    $("body").removeClass("loading");
+                    setTimeout(function(){
+                        $(".preloader").remove();
+                    }, 500);
+                }, 500);
+            });
+
+            loader.start();
+
             $(document).ready(function(){
                 var element = $('.scroll-down-hint').get(0);
                 var waypoint = new Waypoint({
@@ -39,10 +60,19 @@
                     window.open(this.href, "Share", "fullscreen=no, left="+left+", top=100, width=550, height=400");
                     return false;
                 });
+
             });
         </script>
     </head>
-    <body>
+    <body class="loading">
+        <div class="preloader">
+            <div class="content">
+                <div class="indicator">
+                    <img src="images/preloaderimage.png" width="32" />
+                </div>
+                Loading...
+            </div>
+        </div>
         <section class="hero">
             <div class="overlay">
                 <div class="splash">
