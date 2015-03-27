@@ -5,4 +5,4 @@
 
 This is a landing page for the Freeshot Dribbble Client for iOS. 
 
-[Check out the live site!](http://lukevella.github.io/freeshot-landing)
+[Check out the live site!](http://freeshotapp.com)
