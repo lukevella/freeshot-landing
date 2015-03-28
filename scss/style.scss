@@ -2,7 +2,6 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "partials/reset";
-@import "partials/preloader";
 
 $blue-clr:#049FE2;
 $pink-clr:#E84D75;
@@ -13,9 +12,6 @@ body {
     font-family:'Roboto', 'Helvetica Neue', Arial, sans-serif;
     height:100% !important;
     position:relative;
-    &.loading {
-        overflow:hidden;
-    }
 }
 
 button:focus, a:focus, input:focus {outline:0;}

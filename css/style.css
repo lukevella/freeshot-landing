@@ -60,63 +60,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg); }
-  to {
-    -webkit-transform: rotate(360deg); } }
-@-moz-keyframes spin {
-  from {
-    -moz-transform: rotate(0deg); }
-  to {
-    -moz-transform: rotate(360deg); } }
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  to {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg); } }
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  display: table;
-  background: white;
-  z-index: 100;
-  font-weight: bold;
-  font-size: 11px;
-  text-transform: uppercase;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out; }
-  .preloader .content {
-    display: table-cell;
-    vertical-align: middle; }
-  .preloader .indicator {
-    margin-bottom: 15px; }
-    .preloader .indicator img {
-      -webkit-animation: spin 1s linear infinite;
-      -moz-animation: spin 1s linear infinite;
-      animation: spin 1s linear infinite; }
-  .preloader.fadeOut {
-    opacity: 0; }
-
 body {
   font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   height: 100% !important;
   position: relative; }
-  body.loading {
-    overflow: hidden; }
 
 button:focus, a:focus, input:focus {
   outline: 0; }
