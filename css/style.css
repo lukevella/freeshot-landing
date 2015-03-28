@@ -163,7 +163,7 @@ a {
 .hero {
   text-align: center;
   height: 100%;
-  background: url("../images/background.png") no-repeat;
+  background: url("../images/background.jpg") no-repeat;
   background-size: cover;
   position: relative;
   min-height: 700px;
